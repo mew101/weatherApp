@@ -9,25 +9,29 @@ body{
     font-family: 'montserrat', sans-serif;
     background-image: url(/white-clouds-in-pink-and-blue-clouds-2310713.jpg);
     background-size: cover;
-    background-position: top center;
 }
 .app-wrap{
     display: flex;
     flex-direction: column;
     min-height: 100vw;
+    
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgbe(0,0,0,0.6));
 }
-.header{
+header{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 50px 15px 15px;
 }
-.header input{
+header input{
     width: 100%;
     max-width: 200px;
     padding: 10px 15px;
     border: none;
     outline: none;
     background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    border: 2px solid;
+    color: #313131;
+
 }
