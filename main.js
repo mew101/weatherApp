@@ -1,5 +1,6 @@
+//1.4 api key placeholder. Remember to change prior to running app. +1
 const api = {
-   key:  "afaf9f8d48cff6cafd32e23220bcfdbf",
+   key:  "e0e64ad8d254a4798487b4b8b09ca36e",
    base: "https://api.openweathermap.org/data/2.5/",
 }
 
@@ -13,16 +14,17 @@ function setQuery(evt) {
 }
 
 function getResults (query) {
-  fetch (`${api.base}weather?q={query}&units=metric&APPID=${api.key}`)
+  fetch (`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then(weather => {
         return weather.json();
-    }).then(displayResults);
+       }).then(displayResults);
 }
 
-function displayResults(weather){
+function displayResults (weather){
+    console.log(weather);
     let city = document.querySelector('.location .city');
-    city.innerText = `$(weather.name), {weather.sys.country}`;
-  
+    city.innerText = `${weather.name} ${weather.sys.country}`;
+
     let now = new Date();
     let date = document.querySelector('.location .date');
     date.innerText = dateBuilder(now);
@@ -33,7 +35,7 @@ function displayResults(weather){
     let weather_el = document.querySelector('.current .weather');
     weather_el.innerText = weather.weather[0].main;
 
-    let hilow = document.querySelector('.hi-low');
+    let hilow = document.querySelector('.high-low');
     hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
 }
 
